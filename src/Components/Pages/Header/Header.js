@@ -1,16 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import './Header.css';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [open, setOpen] = useState(false);
 
   const handleLogOut = () => {
     logOut()
       .then(() => {})
       .catch((error) => console.error(error));
   };
+
   return (
     <div className="Navbar_container  ">
       <div className="all-content py-2  flex items-center justify-between">
@@ -29,7 +32,10 @@ const Header = () => {
           <p>FireShip.</p>
         </div>
         <div className="middle_part">
-          <ul className="flex">
+        <div className="h-6 w-6 md:hidden" onClick={() => setOpen(!open)}>
+            {open ? <XMarkIcon> </XMarkIcon> : <Bars3Icon></Bars3Icon>}
+          </div>
+          <ul className={`navbar_css nav_style md:flex w-full justify-end absolute md:static ${open ? 'top-12 left-0 py-6 open' : 'top-[-140px] left-0 close'}`}>
             <li className="px-5">
               <Link to="/">Courses</Link>
             </li>
