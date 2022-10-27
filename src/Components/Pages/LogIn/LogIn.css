@@ -34,7 +34,7 @@ button {
   align-items: center;
 }
 
-.card {
+.card_custom {
   width: 60vw;
   max-width: 800px;
   background: url(https://c0.wallpaperflare.com/preview/480/35/628/closeup-photo-of-black-sand.jpg);
@@ -45,31 +45,31 @@ button {
   display: flex;
   color: #fff;
 }
-.card > * {
+.card_custom > * {
   flex-basis: 100%;
   margin: 10px;
 }
-.card .login-panel {
+.card_custom .login-panel {
   border-radius: 0.5rem;
   background: rgba(7, 7, 7, 0.9);
   padding: 1rem 3rem;
 }
-.card .login-panel .login-with-google {
+.card_custom .login-panel .login-with-google {
   margin-top: 3rem;
 }
-.card .login-panel .login-with-google h4 {
+.card_custom .login-panel .login-with-google h4 {
   font-weight: 300;
 }
-.card .login-panel .login-with-google button {
+.card_custom .login-panel .login-with-google button {
   margin-top: 1rem;
 }
-.card .login-panel .divider {
+.card_custom .login-panel .divider {
   border-top: 1px solid #fff;
   position: relative;
   margin: 3rem 0;
   z-index: 0;
 }
-.card .login-panel .divider p {
+.card_custom .login-panel .divider p {
   position: absolute;
   top: -18px;
   left: 45%;
@@ -78,16 +78,16 @@ button {
   border-radius: 50%;
   padding: 5px;
 }
-.card .login-panel .login-with-email {
+.card_custom .login-panel .login-with-email {
   display: flex;
   flex-direction: column;
 }
-.card .login-panel .login-with-email label {
+.card_custom .login-panel .login-with-email label {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.801);
   margin-bottom: 0.2rem;
 }
-.card .login-panel .login-with-email input {
+.card_custom .login-panel .login-with-email input {
   height: 40px;
   border-radius: 0.2rem;
   background: transparent;
@@ -99,30 +99,30 @@ button {
   -ms-border-radius: 0.2rem;
   -o-border-radius: 0.2rem;
 }
-.card .login-panel .link-container {
+.card_custom .login-panel .link-container {
   margin-top: 3rem;
 }
-.card .login-panel .link-container p {
+.card_custom .login-panel .link-container p {
   font-size: 1rem;
 }
-.card .login-panel .link-container a {
+.card_custom .login-panel .link-container a {
   color: #4484f2;
   text-decoration: none;
 }
-.card .text-panel {
+.card_custom .text-panel {
   display: flex;
   align-self: flex-end;
 }
-.card .text-panel .text {
+.card_custom .text-panel .text {
   margin-left: 3rem;
   color: rgba(255, 255, 255, 0.801);
   margin-right: 1rem;
 }
-.card .text-panel .text h3 {
+.card_custom .text-panel .text h3 {
   font-weight: normal;
   margin-bottom: 1.3rem;
 }
-.card .text-panel .text p {
+.card_custom .text-panel .text p {
   font-size: 0.7rem;
   margin-bottom: 2.5rem;
 }

@@ -36,7 +36,7 @@ const LogIn = () => {
   };
   return (
     <div className="container">
-      <div className="card">
+      <div className="card_custom">
         <div className="login-panel">
           <div className="login-with-google">
             <h4>Log in to your account</h4>

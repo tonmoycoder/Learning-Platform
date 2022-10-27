@@ -5,6 +5,7 @@ import SideNav from '../Components/Shared/SideNav/SideNav';
 import './Main.css'
 
 const Main = () => {
+
   return (
     <>
       <Header></Header>
