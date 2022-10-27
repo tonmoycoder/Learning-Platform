@@ -6,11 +6,51 @@ import './LogIn.css';
 
 const LogIn = () => {
   const [error, setError] = useState('');
-  const { signIn, setLoading } = useContext(AuthContext);
+  const { signIn, setLoading ,setUser,GoogleSignUp,GithubSignUp} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
 
+  // google log in
+
+  const handleGoogleLogIn = () => {
+    GoogleSignUp()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        console.log(user);
+        setError('');
+        navigate(from, { replace: true });
+        toast.success('Yayy! Successfully logged In with Google');
+      })
+      .catch((err) => {
+        console.error(err);
+        setError(error.message);
+      });
+  };
+
+  // Github log in
+
+  const handleGithubLogIn = () => {
+    GithubSignUp()
+      .then((result) => {
+        const user = result.user;
+        setUser(user);
+        console.log(user);
+        setError('');
+        navigate(from, { replace: true });
+        toast.success('Yayy! Successfully logged In with Github');
+      })
+      .catch((err) => {
+        console.error(err);
+        setError(error.message);
+      });
+  };
+
+
+
+
+  // on submit login
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -40,8 +80,8 @@ const LogIn = () => {
         <div className="login-panel">
           <div className="login-with-google">
             <h4>Log in to your account</h4>
-            <button  className="btn btn-google">Log In with Google</button>
-            <button className="btn btn-google">Log In with Github</button>
+            <button onClick={handleGoogleLogIn}  className="btn btn-google">Log In with Google</button>
+            <button onClick={handleGithubLogIn} className="btn btn-google">Log In with Github</button>
           </div>
 
           <div className="divider">
