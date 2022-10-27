@@ -1,49 +1,21 @@
-/* import React from 'react';
-import './App.css';
-import { PDFDownloadLink, Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import React from 'react';
+import Pdf from "react-to-pdf";
 
 
-const styles = StyleSheet.create({
-    page: {
-      flexDirection: 'row',
-      backgroundColor: '#E4E4E4'
-    },
-    section: {
-      margin: 10,
-      padding: 10,
-      flexGrow: 1
-    }
-  });
-  
-  const MyDoc = () => (
-    <Document>
-      <Page size="A4" style={styles.page}>
-        <View style={styles.section}>
-          <Text>Section #1</Text>
-        </View>
-        <View style={styles.section}>
-          <Text>Section #2</Text>
-        </View>
-      </Page>
-    </Document>
-  );
+const ref = React.createRef();
 
 
 const ReactPdf = () => {
-    return (
-        <div>
-            <div className="App">
-      <PDFDownloadLink document={<MyDoc />} fileName="somename.pdf">
-      {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}
-    </PDFDownloadLink>
+  return (
+    <div>
+      <Pdf targetRef={ref} filename="code-example.pdf">
+        {({ toPdf }) => <button className="btn btn-success" onClick={toPdf}>Download Pdf</button>}
+      </Pdf>
+      <div ref={ref}>
+        <h1 className='mt-5'>Download course guideline in PDF 🙄</h1>
+      </div>
     </div>
-        </div>
-    );
+  );
 };
 
 export default ReactPdf;
-
-
-
-
- */
