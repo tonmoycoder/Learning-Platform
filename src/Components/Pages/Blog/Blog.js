@@ -1,40 +1,106 @@
 import React from 'react';
-import './Blog.css'
+import './Blog.css';
 
 const Blog = () => {
-    return (
-        <div className=' blog_style inter'>
-        <div className='p-8'>
-            <div>
-                <h4 className='font-bold text-2xl'>1. What is the purpose of <span className='font-extrabold roboto text-3xl text-yellow-300'>React Router</span>?</h4><br />
-                <p className='px-8'>
-                React Router is a fully-featured client and server-side routing library for React, a JavaScript library for building user interfaces. It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL. Let us create a simple application to React to understand how the React Router works. The application will contain three components: home component, about a component, and contact component. <br /> <br />
-                React Router plays an important role to display multiple views in a single page application. Without React Router, it is not possible to display multiple views in React applications. Most of the social media websites like Facebook, Instagram uses React Router for rendering multiple views.
-                </p>
-            </div><br /><br />
-            <div>
-                <h4 className='font-bold text-2xl'>2. How Does <span className='font-extrabold roboto text-3xl text-yellow-300'>Context API</span> works?</h4>
-                <br />
-                <p className='px-8'>
-                Context is a built-in API introduced in React 16.3. It makes it possible to pass data from parent to children nested deep down the component tree directly, instead of passing it down through a chain of props. <br /> <br />
-                The React Context API is a way for a React app to effectively produce global variables that can be passed around.  <br />
-                Context is primarily used when some data needs to be accessible by many components at different nesting levels. Apply it sparingly because it makes component reuse more difficult. If you only want to avoid passing some props through many levels, component composition is often a simpler solution than context.
-                </p>
-            </div><br /><br />
-            <div>
-                <h4 className='font-bold text-2xl'>3. What is <span className='font-extrabold roboto text-3xl text-yellow-300' >'useHref()'</span> hook?</h4>
-                <br />
-                <p className='px-8'>
-                The useRef is a hook that allows to directly create a reference to the DOM element in the functional component. Syntax: const refContainer = useRef(initialValue); The useRef returns a mutable ref object.
-                    <br /><br />
-                    Use useRef if you need to manage focus, text selection, trigger imperative animations or integrating third-party libraries.
-                    <br /><br />
-                    useRef returns a mutable ref object whose .current property is initialized to the passed argument ( initialValue ). The returned object will persist for the full lifetime of the component. Essentially, useRef is like a “box” that can hold a mutable value in its .current property.
-                </p>
-            </div>
+  return (
+    <div className=" blog_style inter">
+      <div className="p-8">
+        <div>
+          <h4 className="font-bold text-2xl">
+            1. what is <span className="font-extrabold roboto text-3xl text-yellow-300">cors?</span>
+            ?
+          </h4>
+          <br />
+          <p className="px-8">
+            Cross-Origin Resource Sharing (CORS) is an HTTP-header based mechanism that allows a
+            server to indicate any origins (domain, scheme, or port) other than its own from which a
+            browser should permit loading resources. CORS also relies on a mechanism by which
+            browsers make a "preflight" request to the server hosting the cross-origin resource, in
+            order to check that the server will permit the actual request. In that preflight, the
+            browser sends headers that indicate the HTTP method and headers that will be used in the
+            actual request. <br /> <br />
+            For security reasons, browsers restrict cross-origin HTTP requests initiated from
+            scripts. For example, XMLHttpRequest and the Fetch API follow the same-origin policy.
+            This means that a web application using those APIs can only request resources from the
+            same origin the application was loaded from unless the response from other origins
+            includes the right CORS headers.
+          </p>
         </div>
+        <br />
+        <br />
+        <div>
+          <h4 className="font-bold text-2xl">
+            2. Why are you using{' '}
+            <span className="font-extrabold roboto text-3xl text-yellow-300">firebase?</span> What
+            other options do you have to implement{' '}
+            <span className="font-extrabold roboto text-3xl text-yellow-300">authentication?</span>
+          </h4>
+          <br />
+          <p className="px-8">
+            The Firebase Realtime Database lets you build rich, collaborative applications by
+            allowing secure access to the database directly from client-side code. Data is persisted
+            locally, and even while offline, realtime events continue to fire, giving the end user a
+            responsive experience. When the device regains connection, the Realtime Database
+            synchronizes the local data changes with the remote updates that occurred while the
+            client was offline, merging any conflicts automatically. <br /> <br />
+            Competitors and Alternatives to Firebase Realtime Database
+            <br /> <br />
+            1.MongoDB.
+            <br />
+            2.Oracle Database.
+            <br />
+            3.Amazon Redshift.
+            <br />
+            4.DataStax Enterprise.
+            <br />
+            5.Redis Enterprise Cloud.
+            <br />
+            6.Cloudera Enterprise Data Hub.
+            <br />
+            7.Db2.
+            <br />
+            8.Couchbase Server. <br />
+          </p>
         </div>
-    );
+        <br />
+        <br />
+        <div>
+          <h4 className="font-bold text-2xl">
+            3. How does the {''}
+            <span className="font-extrabold roboto text-3xl text-yellow-300">
+              private route
+            </span>{' '}
+            work?
+          </h4>
+          <br />
+          <p className="px-8">
+            The private route component is similar to the public route, the only change is that
+            redirect URL and authenticate condition.
+            <br />
+            <br />
+            If the user is not authenticated he will be redirected to the login page and the user
+            can only access the authenticated routes If he is authenticated (Logged in).
+            <br />
+            <br />
+            Public and Private routes will also restrict accessing the previously visited routes using the browser back button after logout. I hope you have found this useful. Thank you for reading.
+          </p>
+        </div>
+        <div>
+          <h4 className="font-bold text-2xl">
+            2. What is  {' '}
+            <span className="font-extrabold roboto text-3xl text-yellow-300">Node?</span>  How does  {' '}
+            <span className="font-extrabold roboto text-3xl text-yellow-300">Node </span>work?
+          </h4>
+          <br />
+          <p className="px-8">
+          Node.js is an open-source backend javascript runtime environment. It is a used as backend service where javascript works on the server-side of the application. This way javascript is used on both frontend and backend. Node.js runs on chrome v8 engine which converts javascript code into machine code, it is highly scalable, lightweight, fast, and data-intensive. <br /> <br />
+          Consider a scenario where we request a backend database for the details of user1 and user2 and then print them on the screen/console. The response to this request takes time, but both of the user data requests can be carried out independently and at the same time. When 100 people connect at once, rather than having different threads, Node will loop over those connections and fire off any events your code should know about. If a connection is new it will tell you .If a connection has sent you data, it will tell you .If the connection isn’t doing anything ,it will skip over it rather than taking up precision CPU time on it. Everything in Node is based on responding to these events. So we can see the result, the CPU stay focused on that one process and doesn’t have a bunch of threads for attention.There is no buffering in Node.JS application it simply output the data in chunks.
+            
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Blog;

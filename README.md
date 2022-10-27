@@ -1,7 +1,7 @@
 #This is a learning platform or course platform assignment.
 Assignment website name : FireShipCodeCamp
-Live website link: [title] 
-	---
+Live website link: [title]  
+___
 FireShipCodeCamp is a course website.You can learn MERN stack or MEAN stack from here.
 ##Used technology in this assignment:
 1. React.js
