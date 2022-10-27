@@ -55,7 +55,7 @@ const Register = () => {
   return (
     <>
       <div className="container">
-        <div className="card">
+        <div className="card_custom">
           <div className="login-panel">
            
             <form onSubmit={handleSubmit}>
