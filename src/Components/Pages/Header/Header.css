@@ -1,17 +1,20 @@
-.Navbar_container{
+.Navbar_container {
   padding: 0 12rem;
   background: #87ABAD;
 }
 
 
-@media (max-width: 800px){
-  .Navbar_container{
+
+@media (max-width: 800px) {
+  .Navbar_container {
     padding: 0 1rem;
   }
-  .navbar_css{
+
+  .navbar_css {
     background: #87ABAD;
   }
-  .open{
+
+  .open {
     top: 4rem;
     justify-content: center;
     transition: all ease-in-out .5s;
@@ -19,13 +22,14 @@
     -moz-transition: all ease-in-out .5s;
     -ms-transition: all ease-in-out .5s;
     -o-transition: all ease-in-out .5s;
-}
-  .close{
+  }
+
+  .close {
     justify-content: center;
     transition: all ease-in-out .5s;
     -webkit-transition: all ease-in-out .5s;
     -moz-transition: all ease-in-out .5s;
     -ms-transition: all ease-in-out .5s;
     -o-transition: all ease-in-out .5s;
-}
+  }
 }

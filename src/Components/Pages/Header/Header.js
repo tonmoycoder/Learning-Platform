@@ -49,7 +49,7 @@ const Header = () => {
             <>
               {user?.uid ? (
                 <>
-                  <li className="px-5" onClick={handleLogOut}>
+                  <li className="px-5 cursor-pointer" onClick={handleLogOut}>
                     LogOut
                   </li>
                 </>
@@ -80,7 +80,7 @@ const Header = () => {
               {user?.photoURL ? (
                 <img src={user?.photoURL} alt="Avatar" />
               ) : (
-                <img
+                <img  
                   src="https://assets.newglue.com/assets/avatar_placeholder-c4a9963ad86c68649100b476add586667aaaf4672a3dbfd6abf0e7338f4f5337.jpg"
                   alt="dummy Avatar"
                 />

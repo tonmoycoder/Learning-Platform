@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './NewsSummaryCard.css';
 
 const NewsSummaryCard = ({ news }) => {
-  const { _id, title, author, details, image_url} = news;
+  const { _id, title, author, details, image_url } = news;
   return (
     <div className="grid custom_design_card">
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -23,11 +23,13 @@ const NewsSummaryCard = ({ news }) => {
           </p>
           <div className="divider">Publish details</div>
           <div>
-                        <p className='mb-0'>{author?.name}</p>
-                        <p>{author?.published_date}</p>
-                    </div>
+            <p className="mb-0">{author?.name}</p>
+            <p>{author?.published_date}</p>
+          </div>
           <div className="card-actions">
-            <Link to={`/courses/${_id}`} className="btn btn-primary">Checkout</Link>
+            <Link to={`/courses/${_id}`} className="btn btn-primary">
+              Get Premium Access
+            </Link>
           </div>
         </div>
       </div>
