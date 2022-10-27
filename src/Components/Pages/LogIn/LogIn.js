@@ -35,55 +35,51 @@ const LogIn = () => {
       });
   };
   return (
-    <div class="container">
-      <div class="card">
-        <div class="login-panel">
-          <div class="login-with-google">
+    <div className="container">
+      <div className="card">
+        <div className="login-panel">
+          <div className="login-with-google">
             <h4>Log in to your account</h4>
-            <button class="btn btn-google">Log In with Google</button>
-            <button class="btn btn-google">Log In with Github</button>
+            <button  className="btn btn-google">Log In with Google</button>
+            <button className="btn btn-google">Log In with Github</button>
           </div>
 
-          <div class="divider">
+          <div className="divider">
             <p>OR</p>
           </div>
           <form onSubmit={handleSubmit}>
-            <div class="login-with-email">
-              <label for="">Email address</label>
+            <div className="login-with-email">
+              <label >Email address</label>
               <input
                 type="email"
                 name="email"
-                id=""
-                class="form-control"
                 placeholder="Enter your email address"
                 aria-describedby="helpId"
                 required
               />
             </div>
-            <div class="login-with-email mt-3">
-              <label for="">Password</label>
+            <div className="login-with-email mt-3">
+              <label >Password</label>
               <input
                 type="password"
                 name="password"
-                id=""
-                class="form-control"
                 placeholder="Enter your password"
                 aria-describedby="helpId"
                 required
               />
             </div>
             <p className='text-yellow-500 text-lg'>{error}</p>
-            <button class="btn">Login</button>
+            <button className="btn">Login</button>
           </form>
 
-          <div class="link-container">
+          <div className="link-container">
             <p>
               Don't have an account? <Link to="/register">Sign Up</Link>
             </p>
           </div>
         </div>
-        <div class="text-panel">
-          <div class="text">
+        <div className="text-panel">
+          <div className="text">
             <h3>Hurry up!!! Your course waiting for you.. 🙂</h3>
             <p>
               Don't worry!!! you're safe because we use Firebase for authentication.If you trust
