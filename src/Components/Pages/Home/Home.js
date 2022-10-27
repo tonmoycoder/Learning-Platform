@@ -15,7 +15,7 @@ const Home = () => {
         Choose your course from below to learn. ⬇{' '}
       </p>
       <div>
-        <h2>Total Course: {allCourses.length}</h2>
+        <h2 className='my-6 text-center border-b-4 border-indigo-500 '>Total Course: {allCourses.length}</h2>
         <div className="grid d md:grid-cols-3 sm:grid-cols-1 gap-3">
           {allCourses.map((news) => (
             <NewsSummaryCard key={news._id} news={news}></NewsSummaryCard>

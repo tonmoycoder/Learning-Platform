@@ -11,13 +11,13 @@ const SideNav = () => {
         .then(data => setCategories(data));
     }, [])
     return (
-        <div>
+        <div className='text-center mt-12'>
          <div>
-            <h4>All Category: {categories.length}</h4>
+            <h4 className='my-5'>All Category: {categories.length}</h4>
             <div >
                 
                 {
-                    categories.map(category => <p key={category.id}>
+                    categories.map(category => <p className='ml-3 my-5 text-lg rounded border-2 border-sky-500' key={category.id}>
                         <Link to={`/category/${category.id}`}>{category.name}</Link>
                     </p>)
                 }
