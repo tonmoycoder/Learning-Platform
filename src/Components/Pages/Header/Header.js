@@ -4,7 +4,7 @@ import './Header.css';
 
 const Header = () => {
   return (
-    <div className="Navbar_container bg-slate-500 ">
+    <div className="Navbar_container  ">
       <div className="all-content py-2  flex items-center justify-between">
         <div className="left_part flex items-center">
           {/* image of website or logo */}
@@ -26,10 +26,10 @@ const Header = () => {
               <Link to="/">Courses</Link>
             </li>
             <li className="px-5">
-              <Link to="/">FAQ</Link>
+              <Link to="/faq">FAQ</Link>
             </li>
             <li className="px-5">
-              <Link to="/">Blog</Link>
+              <Link to="/blog">Blog</Link>
             </li>
             <li className="px-5">
               <Link to="/login">LogIn</Link>

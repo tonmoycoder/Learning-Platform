@@ -1,126 +1,129 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Register.css'
+import './Register.css';
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import toast from 'react-hot-toast';
+
+
 
 const Register = () => {
-    const [errorMessage, setErrorMessage] = useState('');
-    const [successMessage, setSuccessMessage] = useState(false);
-    const handleRegister = (event) => {
-      event.preventDefault();
-      setSuccessMessage(false);
-      const form = event.target;
-      const email = form.faltumail.value;
-      const name = form.name.value;
-      const password = form.secret.value;
-      console.log(name,email, password);
-      if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
-        setErrorMessage('Please provide at least two Capital character');
-        return;
-      }
-      if (!/(?=.*[!@#$&*])/.test(password)) {
-        setErrorMessage('Please provide at least one Special character');
-        return; // return na korle firebase problem korbe. akhan theke return korle false hole ar age jabe na
-      }
-      if (password.length < 6) {
-        setErrorMessage('Password must be 6 character');
-        return;
-      }
-  
-      setErrorMessage('');
-  
-    /*   createUserWithEmailAndPassword(auth, email, password)
-        .then((result) => {
-          const user = result.user;
-          setSuccessMessage(true);
-          console.log(user);
-          form.reset();
-          EmailVerifications();
-          updateUserName(name);
-        })
-        .catch((error) => {
-          console.error('error message : ', error);
-          setErrorMessage(error.message);
-        });
-    };
-  
-    const EmailVerifications = () => {
-      sendEmailVerification(auth.currentUser).then(() => {
-        alert('Verification Email link sent');
+  const [error, setError] = useState('');
+  const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const photoURL = form.photoURL.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    // console.log(name, photoURL, email, password);
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        setError('');
+        form.reset();
+        handleUpdateUserProfile(name, photoURL);
+        handleEmailVerification();
+        toast.success('Please verify your email address.');
+      })
+      .catch((e) => {
+        console.error(e);
+        setError(e.message);
       });
+  };
+
+  const handleUpdateUserProfile = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
     };
-  
-    const updateUserName = (name) => {
-      updateProfile(auth.currentUser,{
-        displayName: name
-      })
-      .then(() => {
-        console.log('display name updated')
-      })
-      .catch(error => {
-        console.log(error);
-      })
-    } */
-  
-    // const handleEmailBlur = (event) => {
-    //   console.log(event.target.value);
-    // };
-    // const handlePasswordBlur = (event) => {
-    //   console.log(event.target.value);
-    // };
-}
-  
-    return (
-      <div className="App py-10">
-        <div className="form-control pb-5  bg-orange-400 rounded-lg w-1/4 mx-auto">
-          <h3 className="text-2xl text-blue-700 my-3">Please Register here</h3>
-          <form onSubmit={handleRegister}>
-            <input
-              // onBlur={handleEmailBlur}
-              type="email"
-              name="faltumail"
-              required
-              placeholder="Enter Email here"
-              className="input input-bordered input-primary border-2 rounded-lg p-3  w-full max-w-xs"
-            />
-            <br />
-            <br />
-            <input
-              // onBlur={handleEmailBlur}
-              type="text"
-              name="name"
-              required
-              placeholder="Enter Name here"
-              className="input input-bordered input-primary border-2 rounded-lg p-3  w-full max-w-xs"
-            />
-            <br />
-            <br />
-            <input
-              // onBlur={handlePasswordBlur}
-              type="password"
-              name="secret"
-              required
-              placeholder="Enter Password here"
-              className="input border-2 rounded-lg p-3 input-bordered input-primary w-full max-w-xs"
-            />
-            <br />
-            <p className="text-red-600 text-lg font-bold">{errorMessage}</p>
-            {successMessage && (
-              <p className="text-indigo-700 text-lg font-bold">User created successfully</p>
-            )}
-            <button className="btn btn-primary p-4 mt-4" type="submit">
-              Register
-            </button>
-          </form>
-          <p className="text-blue-600 text-xl mt-3">
-            If you already have an account,{' '}
-            <Link to="/login">
-              <span className="text-green-700 underline-offset-2 underline">Login</span>{' '}
-            </Link>{' '}
-            now
-          </p>
+
+    updateUserProfile(profile)
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
+  const handleEmailVerification = () => {
+    verifyEmail()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
+
+  return (
+    <>
+      <div className="container">
+        <div className="card">
+          <div className="login-panel">
+           
+            <form onSubmit={handleSubmit}>
+              <div className="login-with-email mb-2 mt-2">
+                <label htmlFor="">Your name</label>
+                <input
+                  type="text"
+                  name="name"
+                  className="form-control"
+                  placeholder="Enter your nickname"
+                  aria-describedby="helpId"
+                />
+              </div>
+              <div className="login-with-email mb-2">
+                <label htmlFor="">Photo Url</label>
+                <input
+                  type="text"
+                  name="photoURL"
+                  className="form-control"
+                  placeholder="Enter your photo url"
+                  aria-describedby="helpId"
+                />
+              </div>
+              <div className="login-with-email mb-2">
+                <label htmlFor="">Email address</label>
+                <input
+                  type="email"
+                  name="email"
+                  className="form-control"
+                  placeholder="Enter your email address"
+                  aria-describedby="helpId"
+                  required
+                />
+              </div>
+              <div className="login-with-email mb-3">
+                <label htmlFor="">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  className="form-control"
+                  placeholder="Enter your password"
+                  aria-describedby="helpId"
+                  required
+                />
+              </div>
+              <p className="text-yellow-500 text-lg">{error}</p>
+              <button className="btn">Register</button>
+            </form>
+
+            <div className="link-container">
+              <p>
+                Already have an account? <Link to="/register">Login</Link>
+              </p>
+            </div>
+          </div>
+          <div className="text-panel">
+            <div className="text">
+              <h3>Hurry up!!! Your course waiting for you.. 🙂</h3>
+              <p>
+                Don't worry!!! you're safe because we use Firebase for authentication.If you trust
+                google,you can trust us. 😉
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    );
-  };
+    </>
+  );
+};
 
 export default Register;

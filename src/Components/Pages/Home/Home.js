@@ -3,7 +3,7 @@ import './Home.css';
 
 const Home = () => {
   return (
-    <div>
+    <div className='bg-green-600'>
       <h2>This is Home</h2>
       
     </div>
