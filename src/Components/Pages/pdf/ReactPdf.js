@@ -12,7 +12,7 @@ const ReactPdf = () => {
         {({ toPdf }) => <button className="btn btn-success" onClick={toPdf}>Download Pdf</button>}
       </Pdf>
       <div ref={ref}>
-        <h1 className='mt-5'>Download course guideline in PDF 🙄</h1>
+        <h1 className='mt-5'>Download course guideline in PDF</h1>
       </div>
     </div>
   );

@@ -14,6 +14,8 @@ const Header = () => {
       .catch((error) => console.error(error));
   };
 
+ 
+
   return (
     <div className="Navbar_container  ">
       <div className="all-content py-2  flex items-center justify-between">

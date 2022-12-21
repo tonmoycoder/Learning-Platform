@@ -7,7 +7,7 @@ const Blog = () => {
       <div className="p-8">
         <div>
           <h4 className="font-bold text-2xl">
-            1. what is <span className="font-extrabold roboto text-3xl text-yellow-300">cors?</span>
+            1. what is <span className="font-extrabold roboto text-3xl text-orange-600">cors?</span>
             ?
           </h4>
           <br />
@@ -31,9 +31,9 @@ const Blog = () => {
         <div>
           <h4 className="font-bold text-2xl">
             2. Why are you using{' '}
-            <span className="font-extrabold roboto text-3xl text-yellow-300">firebase?</span> What
+            <span className="font-extrabold roboto text-3xl text-orange-600">firebase?</span> What
             other options do you have to implement{' '}
-            <span className="font-extrabold roboto text-3xl text-yellow-300">authentication?</span>
+            <span className="font-extrabold roboto text-3xl text-orange-600">authentication?</span>
           </h4>
           <br />
           <p className="px-8">
@@ -67,7 +67,7 @@ const Blog = () => {
         <div>
           <h4 className="font-bold text-2xl">
             3. How does the {''}
-            <span className="font-extrabold roboto text-3xl text-yellow-300">
+            <span className="font-extrabold roboto text-3xl text-orange-600">
               private route
             </span>{' '}
             work?
@@ -88,8 +88,8 @@ const Blog = () => {
         <div>
           <h4 className="font-bold text-2xl">
             2. What is  {' '}
-            <span className="font-extrabold roboto text-3xl text-yellow-300">Node?</span>  How does  {' '}
-            <span className="font-extrabold roboto text-3xl text-yellow-300">Node </span>work?
+            <span className="font-extrabold roboto text-3xl text-orange-600">Node?</span>  How does  {' '}
+            <span className="font-extrabold roboto text-3xl text-orange-600">Node </span>work?
           </h4>
           <br />
           <p className="px-8">
